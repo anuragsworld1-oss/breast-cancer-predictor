@@ -11,11 +11,28 @@ st.title("🧬 Breast Cancer Prediction App")
 
 st.write("Enter patient details:")
 
-# Input fields
+ 
+# Select only important features
+important_features = [
+    "texture_worst",
+    "radius_mean",
+    "area_worst",
+    "concavity_worst",
+    "symmetry_worst"
+]
+
 input_data = {}
 
+# Create sliders for important features
+for feature in important_features:
+    input_data[feature] = st.slider(feature, 0.0, 50.0, 10.0)
+
+# Fill remaining features with 0
 for feature in features:
-    input_data[feature] = st.number_input(feature, value=0.0)
+    if feature not in input_data:
+        input_data[feature] = 0
+ 
+
 
 # Predict
 if st.button("Predict"):
