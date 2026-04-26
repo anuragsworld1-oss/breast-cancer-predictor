@@ -22,12 +22,19 @@ important_features = [
     "concavity_worst",
     "symmetry_worst"
 ]
-
+ 
+# Sliders with correct ranges
 input_data = {}
 
-# Sliders for important features
-for feature in important_features:
-    input_data[feature] = st.slider(feature, 0.0, 50.0, 10.0)
+input_data["texture_worst"] = st.slider("texture_worst", 0.0, 50.0, 10.0)
+input_data["radius_mean"] = st.slider("radius_mean", 0.0, 30.0, 10.0)
+input_data["area_worst"] = st.slider("area_worst", 0.0, 2000.0, 500.0)
+input_data["concavity_worst"] = st.slider("concavity_worst", 0.0, 1.0, 0.1)
+input_data["symmetry_worst"] = st.slider("symmetry_worst", 0.0, 1.0, 0.2)
+ 
+ 
+
+ 
 
 # Fill remaining features with 0
 for feature in features:
