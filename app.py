@@ -36,7 +36,13 @@ for feature in features:
 
 # Predict
 if st.button("Predict"):
-    df = pd.DataFrame([input_data])
+  
+   df = pd.DataFrame([input_data])
+
+# 🔥 IMPORTANT FIX: match training feature order
+   df = df[features]
+ 
+
 
     prediction = model.predict(df)[0]
     probability = model.predict_proba(df)[0][1]
