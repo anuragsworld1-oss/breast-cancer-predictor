@@ -60,6 +60,6 @@ if st.button("Predict"):
     if prediction == 1:
         st.write("Higher texture, area, and irregular shape indicate higher cancer risk.")
     else:
- 
+        st.write("Lower values suggest a smoother and less irregular tumor (likely benign).")
 
  
